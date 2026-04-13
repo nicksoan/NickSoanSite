@@ -1,0 +1,7 @@
+.brand {
+    color: #0f1728;
+}
+
+.brand:hover {
+    color: #1d4ed8;
+}
