@@ -1,10 +1,10 @@
 :root {
-    --brand-feature: #561969;
-    --brand-feature-dark: #451353;
-    --brand-feature-soft: #f4ebf8;
-    --brand-support: #0d9488;
-    --text-strong: #1b2430;
-    --text-muted: #4e6075;
+    --brand-feature: #7c2dbe;
+    --brand-feature-dark: #5b21b6;
+    --brand-feature-soft: #f3e8ff;
+    --brand-support: #06b6d4;
+    --text-strong: #111827;
+    --text-muted: #374151;
 }
 
 html,
@@ -13,9 +13,9 @@ body {
     padding: 0;
     font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background:
-        radial-gradient(circle at 85% 15%, rgba(86, 25, 105, 0.1), transparent 40%),
-        radial-gradient(circle at 15% 85%, rgba(13, 148, 136, 0.08), transparent 42%),
-        #f7f8fc;
+        radial-gradient(circle at 85% 15%, rgba(124, 45, 190, 0.25), transparent 38%),
+        radial-gradient(circle at 15% 85%, rgba(6, 182, 212, 0.2), transparent 42%),
+        linear-gradient(180deg, #f9f5ff 0%, #eff9ff 100%);
     color: var(--text-strong);
 }
 
@@ -41,9 +41,9 @@ main {
 .site-header {
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid #eadcf1;
+    border-bottom: 1px solid #ddd6fe;
     z-index: 100;
 }
 
@@ -83,6 +83,13 @@ main {
     position: relative;
 }
 
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: center;
+}
+
 .hero::before {
     content: "";
     position: absolute;
@@ -91,6 +98,24 @@ main {
     height: 8px;
     border-radius: 999px;
     background: linear-gradient(90deg, var(--brand-feature), var(--brand-support));
+}
+
+.hero-photo-wrap {
+    width: min(220px, 42vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, var(--brand-feature), var(--brand-support));
+    box-shadow: 0 16px 36px rgba(76, 29, 149, 0.25);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 3px solid #fff;
 }
 
 .eyebrow {
@@ -130,18 +155,19 @@ h1 {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--brand-feature), #6d2a82);
+    background: linear-gradient(135deg, var(--brand-feature), #9333ea);
     color: #fff;
+    box-shadow: 0 8px 20px rgba(91, 33, 182, 0.3);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, var(--brand-feature-dark), #5b1f70);
+    background: linear-gradient(135deg, var(--brand-feature-dark), #7c3aed);
 }
 
 .btn-outline {
-    border-color: #d6c3df;
+    border-color: #c4b5fd;
     color: var(--brand-feature-dark);
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .btn-outline:hover {
@@ -152,9 +178,9 @@ h1 {
     margin: 2rem auto;
     padding: 2rem;
     border-radius: 14px;
-    background: #fff;
-    box-shadow: 0 2px 24px rgba(15, 23, 42, 0.05);
-    border: 1px solid #f0e9f4;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 14px 34px rgba(30, 41, 59, 0.08);
+    border: 1px solid #e9d5ff;
 }
 
 .section h2 {
@@ -204,13 +230,22 @@ h1 {
 .site-footer {
     border-top: 1px solid #e5eaf2;
     padding: 1rem 0 1.5rem;
-    color: #607087;
+    color: #4b5563;
     font-size: 0.9rem;
 }
 
 @media (max-width: 640px) {
     .hero {
         padding-top: 3.2rem;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .hero-photo-wrap {
+        width: min(170px, 52vw);
     }
 
     .section {
